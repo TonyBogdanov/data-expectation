@@ -4,7 +4,6 @@
     "type": "library",
     "require": {
         "php": "^7.3",
-        "nette/tokenizer": "^3.1",
         "ext-json": "^1.7"
     },
     "require-dev": {
