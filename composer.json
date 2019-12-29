@@ -1,0 +1,29 @@
+{
+    "name": "tonybogdanov/data-expectation",
+    "description": "Data structure expectation",
+    "type": "library",
+    "require": {
+        "php": "^7.3",
+        "nette/tokenizer": "^3.1",
+        "ext-json": "^1.7"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3",
+        "phpunit/phpunit": "^8",
+        "phpunit/php-code-coverage": "^7.0",
+        "ext-gd": "^7.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tony Bogdanov",
+            "email": "support@tonybogdanov.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DataExpectation\\": "src/",
+            "Tests\\DataExpectation\\": "tests/"
+        }
+    }
+}
