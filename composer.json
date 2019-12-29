@@ -11,7 +11,8 @@
         "symfony/var-dumper": "^4.3",
         "phpunit/phpunit": "^8",
         "phpunit/php-code-coverage": "^7.0",
-        "ext-gd": "^7.3"
+        "ext-gd": "^7.3",
+        "jaschilz/php-coverage-badger": "^2.0"
     },
     "license": "MIT",
     "authors": [
