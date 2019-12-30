@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1577708900">
-  <project timestamp="1577708900">
+<coverage generated="1577711035">
+  <project timestamp="1577711035">
     <package name="DataExpectation">
       <file name="/home/runner/work/data-expectation/data-expectation/src/AndExpectation.php">
         <class name="DataExpectation\AndExpectation" namespace="DataExpectation" fullPackage="DataExpectation" package="DataExpectation">
@@ -740,9 +740,9 @@
         </class>
         <line num="25" type="method" name="indent" visibility="protected" complexity="1" crap="1" count="27"/>
         <line num="27" type="stmt" count="27"/>
-        <metrics loc="30" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <metrics loc="31" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
     </package>
-    <metrics files="41" loc="3113" ncloc="1838" classes="40" methods="148" coveredmethods="148" conditionals="0" coveredconditionals="0" statements="345" coveredstatements="345" elements="493" coveredelements="493"/>
+    <metrics files="41" loc="3114" ncloc="1839" classes="40" methods="148" coveredmethods="148" conditionals="0" coveredconditionals="0" statements="345" coveredstatements="345" elements="493" coveredelements="493"/>
   </project>
 </coverage>
