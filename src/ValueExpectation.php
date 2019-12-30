@@ -9,6 +9,7 @@
 
 namespace DataExpectation;
 
+use DataComparator\Comparator;
 use DataExpectation\Exceptions\UnexpectedDataException;
 
 /**
@@ -74,7 +75,11 @@ class ValueExpectation implements ExpectationInterface {
      */
     public function expect( $data, string $path = null ) {
 
-        if ( $this->getValue() !== $data ) {
+        try {
+
+            Comparator::compare( $this->getValue(), $data );
+
+        } catch ( \Exception $e ) {
 
             throw new UnexpectedDataException( $data, $this, $path );
 

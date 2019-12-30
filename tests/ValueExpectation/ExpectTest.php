@@ -46,6 +46,15 @@ class ExpectTest extends TestCase {
         $arrayExpectation = new ValueExpectation( [ 1, 'two', false ] );
         $this->assertEquals( $arrayExpectation, $arrayExpectation->expect( [ 1, 'two', false ] ) );
 
+        $object1 = new \stdClass();
+        $object1->foo = 'bar';
+
+        $object2 = new \stdClass();
+        $object2->foo = 'bar';
+
+        $objectExpectation = new ValueExpectation( $object1 );
+        $this->assertEquals( $objectExpectation, $objectExpectation->expect( $object2 ) );
+
         $largeData = explode( ' ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor' .
             ' incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation' .
             ' ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit' .
