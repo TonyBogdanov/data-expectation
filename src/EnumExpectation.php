@@ -18,7 +18,7 @@ use DataExpectation\Traits\IndentTrait;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class EnumExpectation implements ExpectationInterface {
+class EnumExpectation extends AbstractExpectation {
 
     use IndentTrait;
 
@@ -35,6 +35,19 @@ class EnumExpectation implements ExpectationInterface {
     public function __construct( array $options ) {
 
         $this->setOptions( array_values( $options ) );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->options ],
+
+        ] );
 
     }
 

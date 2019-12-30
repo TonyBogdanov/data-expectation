@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class CountableExpectation implements ExpectationInterface {
+class CountableExpectation extends AbstractExpectation {
 
     /**
      * @return string

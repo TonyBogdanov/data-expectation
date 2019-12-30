@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class ArrayKeysExpectation implements ExpectationInterface {
+class ArrayKeysExpectation extends AbstractExpectation {
 
     /**
      * @var ExpectationInterface
@@ -40,6 +40,19 @@ class ArrayKeysExpectation implements ExpectationInterface {
         $this
             ->setExpectation( $expectation )
             ->setSort( $sort );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->expectation, $this->sort ],
+
+        ] );
 
     }
 

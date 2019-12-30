@@ -18,7 +18,7 @@ use DataExpectation\Traits\IndentTrait;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class MapExpectation implements ExpectationInterface {
+class MapExpectation extends AbstractExpectation {
 
     use IndentTrait;
 
@@ -36,6 +36,19 @@ class MapExpectation implements ExpectationInterface {
 
         ksort( $expectations );
         $this->setExpectations( $expectations );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->expectations ],
+
+        ] );
 
     }
 

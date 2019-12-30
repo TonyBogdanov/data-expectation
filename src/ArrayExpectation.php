@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class ArrayExpectation implements ExpectationInterface {
+class ArrayExpectation extends AbstractExpectation {
 
     /**
      * @return string

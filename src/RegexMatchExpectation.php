@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class RegexMatchExpectation implements ExpectationInterface {
+class RegexMatchExpectation extends AbstractExpectation {
 
     /**
      * @var string
@@ -32,6 +32,19 @@ class RegexMatchExpectation implements ExpectationInterface {
     public function __construct( string $pattern ) {
 
         $this->setPattern( $pattern );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->pattern ],
+
+        ] );
 
     }
 

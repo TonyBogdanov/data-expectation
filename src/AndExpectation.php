@@ -18,7 +18,7 @@ use DataExpectation\Traits\IndentTrait;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class AndExpectation implements ExpectationInterface {
+class AndExpectation extends AbstractExpectation {
 
     use IndentTrait;
 
@@ -43,6 +43,19 @@ class AndExpectation implements ExpectationInterface {
     ) {
 
         $this->setExpectations( array_merge( [ $left, $right ], $extra ) );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => $this->expectations,
+
+        ] );
 
     }
 

@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class ClassExpectation implements ExpectationInterface {
+class ClassExpectation extends AbstractExpectation {
 
     /**
      * @var string
@@ -32,6 +32,19 @@ class ClassExpectation implements ExpectationInterface {
     public function __construct( string $name ) {
 
         $this->setName( $name );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->name ],
+
+        ] );
 
     }
 

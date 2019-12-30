@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class LowerThanOrEqualExpectation implements ExpectationInterface {
+class LowerThanOrEqualExpectation extends AbstractExpectation {
 
     /**
      * @var int|float
@@ -32,6 +32,19 @@ class LowerThanOrEqualExpectation implements ExpectationInterface {
     public function __construct( $value ) {
 
         $this->setValue( $value );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->value ],
+
+        ] );
 
     }
 

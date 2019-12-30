@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class RegexPatternExpectation implements ExpectationInterface {
+class RegexPatternExpectation extends AbstractExpectation {
 
     /**
      * @return string

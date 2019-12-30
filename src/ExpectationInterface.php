@@ -17,7 +17,7 @@ use DataExpectation\Exceptions\UnexpectedDataException;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-interface ExpectationInterface {
+interface ExpectationInterface extends \JsonSerializable {
 
     /**
      * @return string

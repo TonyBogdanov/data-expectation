@@ -18,7 +18,7 @@ use DataExpectation\Traits\IndentTrait;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class CountExpectation implements ExpectationInterface {
+class CountExpectation extends AbstractExpectation {
 
     use IndentTrait;
 
@@ -35,6 +35,19 @@ class CountExpectation implements ExpectationInterface {
     public function __construct( ExpectationInterface $expectation ) {
 
         $this->setExpectation( $expectation );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->expectation ],
+
+        ] );
 
     }
 

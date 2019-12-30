@@ -18,7 +18,7 @@ use DataExpectation\Traits\IndentTrait;
  * @package DataExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class ArrayDiffExpectation implements ExpectationInterface {
+class ArrayDiffExpectation extends AbstractExpectation {
 
     use IndentTrait;
 
@@ -43,6 +43,19 @@ class ArrayDiffExpectation implements ExpectationInterface {
         $this
             ->setCompare( array_values( $compare ) )
             ->setExpectation( $expectation );
+
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+
+        return array_replace( parent::jsonSerialize(), [
+
+            'expectationArguments' => [ $this->compare, $this->expectation ],
+
+        ] );
 
     }
 
