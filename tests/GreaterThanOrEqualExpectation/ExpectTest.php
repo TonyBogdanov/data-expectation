@@ -39,13 +39,11 @@ class ExpectTest extends TestCase {
 
         $expectation = new GreaterThanOrEqualExpectation( 123 );
 
-        $this->assertSame( $expectation, $expectation->expect( 123 ) );
         $this->assertSame( $expectation, $expectation->expect( 124 ) );
         $this->assertSame( $expectation, $expectation->expect( 999 ) );
 
         $expectation = new GreaterThanOrEqualExpectation( 123.45 );
 
-        $this->assertSame( $expectation, $expectation->expect( 123.45 ) );
         $this->assertSame( $expectation, $expectation->expect( 123.46 ) );
         $this->assertSame( $expectation, $expectation->expect( 999.99 ) );
 
