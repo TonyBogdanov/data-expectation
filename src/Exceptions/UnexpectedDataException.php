@@ -17,7 +17,7 @@ use DataExpectation\ExpectationInterface;
  * @package DataExpectation\Exceptions
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class UnexpectedDataException extends \Exception {
+class UnexpectedDataException extends AbstractException {
 
     /**
      * @var ExpectationInterface
@@ -38,23 +38,6 @@ class UnexpectedDataException extends \Exception {
      * @var string|null
      */
     protected $at;
-
-    /**
-     * @param $data
-     *
-     * @return string
-     */
-    protected function format( $data ): string {
-
-        if ( is_object( $data ) ) {
-
-            return get_class( $data );
-
-        }
-
-        return gettype( $data );
-
-    }
 
     /**
      * UnexpectedDataException constructor.
@@ -81,7 +64,7 @@ class UnexpectedDataException extends \Exception {
 
         parent::__construct( sprintf(
 
-            "Unexpected data: %1\$s, expected:\n%2\$s%3\$s.",
+            "Unexpected data: %1\$s\n\nviolates expectation: %2\$s%3\$s.",
             $this->getActual(),
             $this->getExpected(),
             $this->hasAt() ? sprintf( "\nat: %1\$s", $this->getAt() ) : '',
@@ -158,7 +141,7 @@ class UnexpectedDataException extends \Exception {
      */
     public function hasAt(): bool {
 
-        return isset( $this->at );
+        return isset( $this->at ) && '' !== $this->at;
 
     }
 

@@ -15,7 +15,7 @@ namespace DataExpectation\Exceptions;
  * @package DataExpectation\Exceptions
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
-class InvalidExpectationDefinitionException extends \Exception {
+class InvalidExpectationDefinitionException extends AbstractException {
 
     /**
      * InvalidExpectationDefinitionException constructor.
@@ -27,7 +27,7 @@ class InvalidExpectationDefinitionException extends \Exception {
         parent::__construct( sprintf(
 
             'Invalid expectation definition: %1$s.',
-            is_object( $definition ) ? get_class( $definition ) : gettype( $definition )
+            $this->format( $definition )
 
         ) );
 
