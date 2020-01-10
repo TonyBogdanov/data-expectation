@@ -34,7 +34,6 @@ class MapExpectation extends AbstractExpectation {
      */
     public function __construct( array $expectations ) {
 
-        ksort( $expectations );
         $this->setExpectations( $expectations );
 
     }
@@ -77,9 +76,6 @@ class MapExpectation extends AbstractExpectation {
      * @throws UnexpectedDataException
      */
     public function expect( $data, string $path = null ) {
-
-        $keys = array_keys( $data );
-        sort( $keys );
 
         foreach ( $this->getExpectations() as $key => $expectation ) {
 
