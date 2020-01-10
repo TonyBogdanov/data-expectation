@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e4413b8eb2d590c60701aebdb92db12",
+    "content-hash": "4a0b89a0086f76733e4a1ccfe8af2b2c",
     "packages": [
         {
             "name": "symfony/polyfill-mbstring",
@@ -198,24 +198,24 @@
         },
         {
             "name": "tonybogdanov/data-comparator",
-            "version": "v1.0",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TonyBogdanov/data-comparator.git",
-                "reference": "b7092447c770c35854790982978fc976d3af3722"
+                "reference": "c4fbff39233f119726d062e4307bd815bb3af9a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TonyBogdanov/data-comparator/zipball/b7092447c770c35854790982978fc976d3af3722",
-                "reference": "b7092447c770c35854790982978fc976d3af3722",
+                "url": "https://api.github.com/repos/TonyBogdanov/data-comparator/zipball/c4fbff39233f119726d062e4307bd815bb3af9a7",
+                "reference": "c4fbff39233f119726d062e4307bd815bb3af9a7",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "^1.7",
+                "ext-json": "*",
                 "php": "^7.3"
             },
             "require-dev": {
-                "ext-gd": "^7.3",
+                "ext-gd": "*",
                 "jaschilz/php-coverage-badger": "^2.0",
                 "phpunit/php-code-coverage": "^7.0",
                 "phpunit/phpunit": "^8.5"
@@ -238,7 +238,7 @@
                 }
             ],
             "description": "Recursive data comparison (of any type)",
-            "time": "2019-12-30T12:17:49+00:00"
+            "time": "2020-01-10T12:26:30+00:00"
         }
     ],
     "packages-dev": [
@@ -954,16 +954,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.1",
+            "version": "8.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7870c78da3c5e4883eaef36ae47853ebb3cb86f2"
+                "reference": "018b6ac3c8ab20916db85fa91bf6465acb64d1e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7870c78da3c5e4883eaef36ae47853ebb3cb86f2",
-                "reference": "7870c78da3c5e4883eaef36ae47853ebb3cb86f2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/018b6ac3c8ab20916db85fa91bf6465acb64d1e0",
+                "reference": "018b6ac3c8ab20916db85fa91bf6465acb64d1e0",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1033,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-12-25T14:49:39+00:00"
+            "time": "2020-01-08T08:49:49+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -1804,7 +1804,7 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^7.3",
-        "ext-json": "^1.7"
+        "ext-json": "*"
     },
     "platform-dev": []
 }
