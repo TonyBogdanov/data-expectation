@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578659980">
-  <project timestamp="1578659980">
+<coverage generated="1578660398">
+  <project timestamp="1578660398">
     <package name="DataExpectation">
       <file name="/Users/runner/runners/2.163.1/work/data-expectation/data-expectation/src/AbstractExpectation.php">
         <class name="DataExpectation\AbstractExpectation" namespace="DataExpectation" fullPackage="DataExpectation" package="DataExpectation">
