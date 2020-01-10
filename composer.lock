@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a0b89a0086f76733e4a1ccfe8af2b2c",
+    "content-hash": "1549b1a6278216e2d6f59302d23ce93b",
     "packages": [
         {
             "name": "symfony/polyfill-mbstring",
@@ -1806,5 +1806,7 @@
         "php": "^7.3",
         "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": {
+        "ext-gd": "*"
+    }
 }
