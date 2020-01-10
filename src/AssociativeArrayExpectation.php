@@ -37,6 +37,12 @@ class AssociativeArrayExpectation extends AbstractExpectation {
      */
     public function expect( $data, string $path = null ) {
 
+        if ( ! is_array( $data ) ) {
+
+            throw new UnexpectedDataException( $data, $this, $path );
+
+        }
+
         $count = count( $data );
         if ( 0 === $count ) {
 

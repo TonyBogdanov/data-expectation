@@ -29,11 +29,27 @@ class ExpectTest extends TestCase {
 
     }
 
-    public function testInvalid() {
+    public function testInvalidType() {
+
+        $this->expectException( UnexpectedDataException::class );
+
+        ( new ArrayExpectation() )->expect( 123 );
+
+    }
+
+    public function testInvalidObject() {
 
         $this->expectException( UnexpectedDataException::class );
 
         ( new ArrayExpectation() )->expect( new \stdClass() );
+
+    }
+
+    public function testInvalidNull() {
+
+        $this->expectException( UnexpectedDataException::class );
+
+        ( new ArrayExpectation() )->expect( null );
 
     }
 
