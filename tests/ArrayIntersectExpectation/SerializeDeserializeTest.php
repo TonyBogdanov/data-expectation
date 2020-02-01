@@ -44,4 +44,13 @@ class SerializeDeserializeTest extends TestCase {
 
     }
 
+    public function testType() {
+
+        $expectation = new ArrayIntersectExpectation( [ 'a', 'b' ], new ValueExpectation( [ 'a', 'b' ] ) );
+
+        $this->assertIsString( $expectation->getType() );
+        $this->assertNotEmpty( $expectation->getType() );
+
+    }
+
 }

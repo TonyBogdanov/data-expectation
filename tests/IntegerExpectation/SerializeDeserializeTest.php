@@ -43,4 +43,13 @@ class SerializeDeserializeTest extends TestCase {
 
     }
 
+    public function testType() {
+
+        $expectation = new IntegerExpectation();
+
+        $this->assertIsString( $expectation->getType() );
+        $this->assertNotEmpty( $expectation->getType() );
+
+    }
+
 }

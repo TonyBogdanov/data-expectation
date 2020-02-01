@@ -63,4 +63,28 @@ class SerializeDeserializeTest extends TestCase {
 
     }
 
+    public function testType() {
+
+        $expectation = new MapExpectation( [
+
+            'string' => new StringExpectation(),
+            'integer' => new IntegerExpectation(),
+            'array' => new ArrayExpectation(),
+            'list' => new ListExpectation( new BooleanExpectation() ),
+            'map' => new MapExpectation( [
+
+                'string' => new StringExpectation(),
+                'integer' => new IntegerExpectation(),
+                'array' => new ArrayExpectation(),
+                'list' => new ListExpectation( new BooleanExpectation() ),
+
+            ] ),
+
+        ] );
+
+        $this->assertIsString( $expectation->getType() );
+        $this->assertNotEmpty( $expectation->getType() );
+
+    }
+
 }

@@ -7,19 +7,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\DataExpectation\ValueExpectation;
+namespace Tests\DataExpectation\AnythingExpectation;
 
 use DataComparator\Comparator;
 use DataExpectation\AbstractExpectation;
+use DataExpectation\AnythingExpectation;
 use DataExpectation\Exceptions\InvalidExpectationDefinitionException;
 use DataExpectation\Exceptions\InvalidExpectationNameException;
-use DataExpectation\ValueExpectation;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class SerializeDeserializeTest
  *
- * @package Tests\DataExpectation\ValueExpectation
+ * @package Tests\DataExpectation\AnythingExpectation
  * @author Tony Bogdanov <tonybogdanov@gmail.com>
  */
 class SerializeDeserializeTest extends TestCase {
@@ -30,7 +30,7 @@ class SerializeDeserializeTest extends TestCase {
      */
     public function testValid() {
 
-        $expectation = new ValueExpectation( 'hello' );
+        $expectation = new AnythingExpectation();
 
         Comparator::compare(
 
@@ -45,7 +45,7 @@ class SerializeDeserializeTest extends TestCase {
 
     public function testType() {
 
-        $expectation = new ValueExpectation( 'hello' );
+        $expectation = new AnythingExpectation();
 
         $this->assertIsString( $expectation->getType() );
         $this->assertNotEmpty( $expectation->getType() );
