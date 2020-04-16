@@ -26,5 +26,10 @@
             "DataExpectation\\": "src/",
             "Tests\\DataExpectation\\": "tests/"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "7.3"
+        }
     }
 }
